@@ -27,6 +27,8 @@
     width: 220px;
     border-right: 0.8px solid rgba(255,255,255,0.2);
     transition: 0.5s ease;
+    transform: translateX(-220px);
+    backdrop-filter: blur(10px);
 }
 
 .sidebar h1 {
@@ -102,4 +104,28 @@ input[type="checkbox"] {
 
 .toggle .bottom-line {
     top: 70%;
+}
+
+input[type="checkbox"]:checked ~ .toggle .top-line {
+    transform: rotate(-45deg);
+    left: 2px;
+    top: 14px;
+    width: 25px;
+}
+
+input[type="checkbox"]:checked ~.toggle .bottom-line {
+    transform: rotate(45deg);
+    top: 14px;
+    left: 2px;
+    width: 25px;
+}
+
+input[type="checkbox"]:checked ~ .toggle .middle-line {
+    transform: translateX(20px);
+    opacity: 0;
+
+}
+
+input[type="checkbox"]:checked ~.sidebar {
+    transform: rotateX(0);
 }
